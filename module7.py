@@ -42,19 +42,19 @@ def get_course_info(course_number):
 def main():
 
     # Request course information
-    course_number = input("Please enter course number to view: ")
+    course_number = input("\nPlease enter course number to view: ").upper()
     try:
         # Try to print course information, error is thrown if
         # course number is invalid
         room, instructor, time = get_course_info(course_number)
         print(f"\nCourse Information for course {course_number}")
         print(f"Room Number: {room}")
-        print(f"Room Number: {instructor}")
-        print(f"Room Number: {time}")
+        print(f"Instructor: {instructor}")
+        print(f"Time: {time}")
 
     # Handle the case where course number is invalid
     except Exception as error:
-        print(f"You entered an invalid or non-existant course number ({course_number}). {error}")
+        print(f"You entered an invalid or non-existant course number ({course_number}).")
     
    
 if __name__ == "__main__":
