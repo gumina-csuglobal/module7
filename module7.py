@@ -29,11 +29,11 @@ course_times = {
 }
 
 # Returns tuple of room#, instructor, time for a given course_number
-def get_course_info(course_number)
+def get_course_info(course_number):
     return (
-        course_rooms(course_number),
-        course_instructors(course_number),
-        course_times(course_number),
+        course_rooms[course_number],
+        course_instructors[course_number],
+        course_times[course_number],
     )
 
 # This program requests a course number from the user 
@@ -53,8 +53,8 @@ def main():
         print(f"Room Number: {time}")
 
     # Handle the case where course number is invalid
-    except:
-        print(f"You entered an invalid or non-existant course number ({course_number}).")
+    except Exception as error:
+        print(f"You entered an invalid or non-existant course number ({course_number}). {error}")
     
    
 if __name__ == "__main__":
