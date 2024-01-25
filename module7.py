@@ -36,20 +36,27 @@ def get_course_info(course_number)
         course_times(course_number),
     )
 
+# This program requests a course number from the user 
+# and prints the room number, instructor, and time information
+# for that course
 def main():
+
+    # Request course information
     course_number = input("Please enter course number to view: ")
     try:
+        # Try to print course information, error is thrown if
+        # course number is invalid
         room, instructor, time = get_course_info(course_number)
         print(f"\nCourse Information for course {course_number}")
         print(f"Room Number: {room}")
         print(f"Room Number: {instructor}")
         print(f"Room Number: {time}")
 
+    # Handle the case where course number is invalid
     except:
         print(f"You entered an invalid or non-existant course number ({course_number}).")
     
    
-
 if __name__ == "__main__":
     main()
 
